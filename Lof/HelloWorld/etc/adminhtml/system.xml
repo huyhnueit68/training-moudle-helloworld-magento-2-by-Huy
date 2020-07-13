@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+        //create the new tab in magento 2 admin
+		<tab id="lof" sortOrder="999" translate="label">
+			<label>lof</label>
+		</tab>
+		<section id="helloworld" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <class>separator-top</class>
+            <label>Hello World</label>
+            <tab>lof</tab>
+            <resource>Lof_HelloWorld::helloworld_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                //field module enable help me can turn on or turn off module
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                //field display text help me can display text
+                <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Display Text</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+            </group>
+		</section>
+	</system>
+</config>
